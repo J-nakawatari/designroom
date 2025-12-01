@@ -124,18 +124,54 @@ if (contactForm) {
     submitBtn.disabled = true;
     submitBtn.textContent = '送信中...';
 
-    setTimeout(() => {
-      // Success
-      submitBtn.textContent = '送信完了';
-      formMessage.textContent = 'お問い合わせありがとうございます。担当者よりご連絡いたします。';
-      formMessage.classList.add('success');
-      contactForm.reset();
+    // Prepare data
+    const formData = {
+      company: contactForm.company.value,
+      name: contactForm.name.value,
+      email: contactForm.email.value,
+      message: contactForm.message.value,
+      website: contactForm.website.value
+    };
 
-      setTimeout(() => {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalBtnText;
-      }, 5000);
-    }, 1500);
+    // Send to PHP script
+    fetch('/mail.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // Success
+          submitBtn.textContent = '送信完了';
+          formMessage.textContent = data.message;
+          formMessage.classList.remove('error');
+          formMessage.classList.add('success');
+          contactForm.reset();
+        } else {
+          // Error from PHP
+          throw new Error(data.message || '送信に失敗しました');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        formMessage.textContent = '送信エラー: ' + error.message;
+        formMessage.classList.remove('success');
+        formMessage.classList.add('error');
+      })
+      .finally(() => {
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+          // Optional: clear success message after a while
+          if (formMessage.classList.contains('success')) {
+            formMessage.textContent = '';
+            formMessage.classList.remove('success');
+          }
+        }, 5000);
+      });
   });
 }
 
