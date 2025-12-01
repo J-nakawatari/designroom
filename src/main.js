@@ -1,5 +1,3 @@
-import './style.css'
-
 // Simple interaction for header background on scroll
 window.addEventListener('scroll', () => {
   const header = document.querySelector('.header');
@@ -134,7 +132,7 @@ if (contactForm) {
     };
 
     // Send to PHP script
-    fetch('/mail.php', {
+    fetch('./mail.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

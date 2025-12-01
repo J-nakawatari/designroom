@@ -27,3 +27,4 @@ fix_portfolio.py
 
 # User specific
 .gemini/
+.claude/

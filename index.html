@@ -60,8 +60,8 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <video class="hero__video" autoplay muted loop playsinline poster="/assets/hero-poster.jpg">
-      <source src="/assets/hero.mp4" type="video/mp4">
+    <video class="hero__video" autoplay muted loop playsinline poster="./assets/hero-poster.jpg">
+      <source src="./assets/hero.mp4" type="video/mp4">
     </video>
     <div class="hero__overlay"></div>
     <div class="hero__content">
@@ -208,7 +208,7 @@
             <div class="portfolio-item">
               <div class="smartphone-mockup">
                 <div class="smartphone-mockup__screen">
-                  <video src="/assets/short_01.mp4" loop playsinline></video>
+                  <video src="./assets/short_01.mp4" loop playsinline></video>
                   <div class="play-button">▶</div>
                 </div>
               </div>
@@ -216,7 +216,7 @@
             <div class="portfolio-item">
               <div class="smartphone-mockup">
                 <div class="smartphone-mockup__screen">
-                  <video src="/assets/short_02.mp4" loop playsinline></video>
+                  <video src="./assets/short_02.mp4" loop playsinline></video>
                   <div class="play-button">▶</div>
                 </div>
               </div>
@@ -224,7 +224,7 @@
             <div class="portfolio-item">
               <div class="smartphone-mockup">
                 <div class="smartphone-mockup__screen">
-                  <video src="/assets/short_03.mp4" loop playsinline></video>
+                  <video src="./assets/short_03.mp4" loop playsinline></video>
                   <div class="play-button">▶</div>
                 </div>
               </div>
@@ -232,7 +232,7 @@
             <div class="portfolio-item">
               <div class="smartphone-mockup">
                 <div class="smartphone-mockup__screen">
-                  <video src="/assets/short_04.mp4" loop playsinline></video>
+                  <video src="./assets/short_04.mp4" loop playsinline></video>
                   <div class="play-button">▶</div>
                 </div>
               </div>
@@ -240,7 +240,7 @@
             <div class="portfolio-item">
               <div class="smartphone-mockup">
                 <div class="smartphone-mockup__screen">
-                  <video src="/assets/short_05.mp4" loop playsinline></video>
+                  <video src="./assets/short_05.mp4" loop playsinline></video>
                   <div class="play-button">▶</div>
                 </div>
               </div>
@@ -248,7 +248,7 @@
             <div class="portfolio-item">
               <div class="smartphone-mockup">
                 <div class="smartphone-mockup__screen">
-                  <video src="/assets/short_06.mp4" loop playsinline></video>
+                  <video src="./assets/short_06.mp4" loop playsinline></video>
                   <div class="play-button">▶</div>
                 </div>
               </div>
@@ -293,58 +293,115 @@
   <!-- Pricing -->
   <section id="pricing" class="section pricing">
     <div class="container">
-      <h2 class="section-title">料金プラン</h2>
+      <h2 class="section-title">業界最安級。もう、動画編集に無駄なコストをかけるのはやめましょう。</h2>
+
       <div class="grid-3">
-        <!-- Trial Plan -->
+        <!-- Spot Plan -->
         <div class="card pricing-card">
+          <div class="pricing-label">まずはここから</div>
           <div class="pricing-header">
-            <h3 class="pricing-title">お試しプラン</h3>
-            <p class="pricing-price">¥10,000<span class="pricing-unit">/本(税抜)</span></p>
+            <h3 class="pricing-title">お試しスポット</h3>
+            <p class="pricing-price">¥2,000<span class="pricing-unit">/本</span></p>
+            <p class="pricing-target">初めての方、単発で頼みたい方</p>
           </div>
           <ul class="pricing-features">
-            <li class="pricing-feature">✅ 動画編集のみ</li>
-            <li class="pricing-feature">✅ 素材完全支給</li>
-            <li class="pricing-feature">✅ 修正1回まで無料</li>
-            <li class="pricing-feature">❌ 企画・構成案</li>
-            <li class="pricing-feature">❌ サムネイル作成</li>
+            <li class="pricing-feature">✅ 修正1回無料</li>
+            <li class="pricing-feature">✅ 最短翌日納品</li>
+            <li class="pricing-feature">✅ スマホ縦型サイズ</li>
           </ul>
           <a href="#contact" class="pricing-cta pricing-cta--outline">相談する</a>
         </div>
 
-        <!-- Standard Plan -->
+        <!-- Light Plan (Popular) -->
         <div class="card pricing-card pricing-card--popular">
-          <div class="pricing-badge">人気No.1</div>
+          <div class="pricing-badge">おすすめ / 人気No.1</div>
           <div class="pricing-header">
-            <h3 class="pricing-title">スタンダード</h3>
-            <p class="pricing-price">¥15,000<span class="pricing-unit">/本(税抜)</span></p>
+            <h3 class="pricing-title">ライトプラン</h3>
+            <p class="pricing-catch">週2〜3本の投稿に最適</p>
+            <p class="pricing-price">¥15,000<span class="pricing-unit">/月</span></p>
+            <p class="pricing-calc">1本あたり <strong>¥1,500</strong>（月10本まで）</p>
           </div>
           <ul class="pricing-features">
-            <li class="pricing-feature">✅ 企画・構成案作成</li>
-            <li class="pricing-feature">✅ 動画編集（BGM・効果音込）</li>
-            <li class="pricing-feature">✅ ナレーション（AI音声）</li>
-            <li class="pricing-feature">✅ 修正2回まで無料</li>
-            <li class="pricing-feature">✅ サムネイル作成</li>
+            <li class="pricing-feature">✅ <strong>優先対応（即日納品可）</strong></li>
+            <li class="pricing-feature">✅ チャットで簡単依頼</li>
+            <li class="pricing-feature">✅ 修正対応あり</li>
+            <li class="pricing-feature">⚠️ 月10本まで。未使用分は翌月に持ち越せません</li>
           </ul>
-          <a href="#contact" class="pricing-cta">申し込む</a>
+          <a href="#contact" class="pricing-cta">今すぐ申し込む</a>
         </div>
 
-        <!-- Premium Plan -->
+        <!-- Standard Plan -->
         <div class="card pricing-card">
+          <div class="pricing-label">毎日投稿で認知を爆発</div>
           <div class="pricing-header">
-            <h3 class="pricing-title">プレミアム</h3>
-            <p class="pricing-price">¥25,000<span class="pricing-unit">/本(税抜)</span></p>
+            <h3 class="pricing-title">スタンダードプラン</h3>
+            <p class="pricing-catch">毎日投稿して認知を爆発させたい店舗様へ</p>
+            <p class="pricing-price">¥30,000<span class="pricing-unit">/月</span></p>
+            <p class="pricing-calc">1本あたり <strong>¥1,000</strong>（月30本まで）</p>
           </div>
           <ul class="pricing-features">
-            <li class="pricing-feature">✅ 企画・構成案作成</li>
-            <li class="pricing-feature">✅ 現地撮影代行（都内近郊）</li>
-            <li class="pricing-feature">✅ ナレーション（プロ声優）</li>
-            <li class="pricing-feature">✅ 修正無制限</li>
-            <li class="pricing-feature">✅ サムネイル作成</li>
+            <li class="pricing-feature">✅ <strong>実質、毎日投稿が可能</strong></li>
+            <li class="pricing-feature">✅ アルバイト代の約1/7のコスト</li>
+            <li class="pricing-feature">✅ 修正3回まで対応（1本につき）</li>
+            <li class="pricing-feature">✅ 全優先対応</li>
           </ul>
           <a href="#contact" class="pricing-cta pricing-cta--outline">相談する</a>
         </div>
       </div>
-      <p class="pricing-note">※月5本以上の定期契約で割引あり。お気軽にご相談ください。</p>
+
+      <!-- Comparison Table -->
+      <div class="pricing-comparison">
+        <h3 class="comparison-title">圧倒的コスト比較</h3>
+        <div class="table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th class="th-empty">比較項目</th>
+                <th class="th-highlight">当サービス</th>
+                <th>一般的な制作会社</th>
+                <th>アルバイト採用</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="row-header">月30本投稿した場合</td>
+                <td class="cell-highlight"><strong>月額 3万円</strong></td>
+                <td>45万円〜<br><span class="small-text">(1本1.5万換算)</span></td>
+                <td>20万円〜<br><span class="small-text">(給与+採用費)</span></td>
+              </tr>
+              <tr>
+                <td class="row-header">手間</td>
+                <td class="cell-highlight"><strong>写真送るだけ</strong></td>
+                <td>細かい打ち合わせ必須</td>
+                <td>教育・シフト管理が大変</td>
+              </tr>
+              <tr>
+                <td class="row-header">クオリティ</td>
+                <td class="cell-highlight"><strong>均一・高品質</strong></td>
+                <td>高いが納期も長い</td>
+                <td>素人レベルで不安定</td>
+              </tr>
+              <tr>
+                <td class="row-header">納期</td>
+                <td class="cell-highlight"><strong>最短 即日</strong></td>
+                <td>3〜7営業日</td>
+                <td>出勤日による</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Options -->
+      <div class="pricing-options">
+        <h4 class="options-title">オプション</h4>
+        <ul class="options-list">
+          <li>お急ぎ納品（3時間以内）：<strong>+1,000円</strong></li>
+          <li>ナレーション男女変更：<strong class="text-highlight">無料</strong></li>
+        </ul>
+      </div>
+
+      <p class="pricing-note">※表示価格は全て税抜です。サブスクプランは最低契約期間3ヶ月となります。</p>
     </div>
   </section>
 
@@ -426,7 +483,7 @@
     </div>
   </footer>
 
-  <script type="module" src="/src/main.js"></script>
+  <script src="./src/main.js"></script>
 </body>
 
 </html>
