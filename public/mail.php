@@ -3,6 +3,9 @@
 mb_language("Japanese");
 mb_internal_encoding("UTF-8");
 
+// セッション開始（連続送信対策）
+session_start();
+
 // JSONデータを受け取る
 $json = file_get_contents("php://input");
 $data = json_decode($json, true);
@@ -13,6 +16,14 @@ $response = array("success" => false, "message" => "");
 // POSTメソッドかつデータがある場合のみ処理
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($data)) {
     
+    // 連続送信チェック（60秒制限）
+    if (isset($_SESSION['last_submit_time']) && (time() - $_SESSION['last_submit_time'] < 60)) {
+        $response["message"] = "送信は完了しています。連続送信はできません。しばらく待ってからお試しください。";
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($response);
+        exit;
+    }
+
     // 入力データの取得とサニタイズ
     $company = htmlspecialchars($data['company'] ?? '', ENT_QUOTES, 'UTF-8');
     $name = htmlspecialchars($data['name'] ?? '', ENT_QUOTES, 'UTF-8');
@@ -80,6 +91,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($data)) {
         
         // 自動返信送信
         mb_send_mail($email, $auto_reply_subject, $auto_reply_body, $auto_reply_headers);
+        
+        // 送信時刻を記録（連続送信対策）
+        $_SESSION['last_submit_time'] = time();
         
     } else {
         $response["message"] = "メール送信に失敗しました。サーバーの設定をご確認ください。";
